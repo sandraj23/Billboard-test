@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Lynn Schirmer for CFA 2023">
+  <title>Times Square Billboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <button id="reset">Reset</button>
+    <button id="mirror">Mirror Display</button>
+    <button id="sepia">Sepia</button>
+    <button id="bw">Black & white</button>
+    <button id="invert">Invert Colors</button>
+    <button id="pause">Toggle pause</button>
+  </nav>
+
+  <main class="scene">
+    <div class="video-container">
+      <video id="my-camera" autoplay></video>
+    </div>
+  </main>
+
+  <script>
+    const video = document.querySelector("#my-camera");
+    const container = document.querySelector('.video-container');
+
+    /* Exercise 1: Getting access to the camera 
+    1. Create an object called myDevices by running the mediaDevices property on navigator.
+    2. Make an object containing constraints, audio: false, video: true
+    3. Call getUserMedia() on myDevices and pass it your constraints. */
+   
+
+
+
+
+
+    /* Exercise 2: Showing the camera stream
+    1. Create a function called showCam with one parameter: stream
+    2. Set the srcObject of the video to stream 
+    3. Call the function by appending .then() to getUserMedia(constraints) */
+
+
+
+
+
+
+
+
+    /* Exercise 3: Protecting against errors 
+    1. Inside showCam(), add a try...catch block 
+    2. Move the existing line of code inside the try block
+    3. Inside of catch, log any error with console.error(error),
+       Set the video left style to -9999px and set the innerHTML of the container to '<h2>Oops, your camera might not be working!</h2>' 
+    */
+
+
+
+
+    
+
+
+    /* Practice Session: Fun with filters 
+     Take a look at the below code. All the filter effect buttons have been selected,
+     and the id for each one colected.
+     Your task is to write a single function to make all the filter styles work.
+     1. Write a function called addEfect, make sure to add a parameter if you need one.
+     2. Inside the function, use the style property to apply the appropriate CSS filter style to the video tag,
+     depending on which button is clicked.
+     */
+    const btns = document.querySelectorAll('button');
+
+    btns.forEach(function (button) {
+      button.addEventListener('click', function () {
+        let id = this.id;
+        addEffect(id);
+      });
+    });
+
+
+   
+  </script>
+</body>
+
+</html>
