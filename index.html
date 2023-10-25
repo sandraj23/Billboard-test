@@ -39,7 +39,14 @@
     2. Make an object containing constraints, audio: false, video: true
     3. Call getUserMedia() on myDevices and pass it your constraints. */
    
+    const myDevices = navigator.mediaDevices;
 
+    const constraints = {
+      audio: false,
+      video: true
+    }
+    
+    myDevices.getUserMedia(constraints).then(showCam);
 
 
 
@@ -50,7 +57,9 @@
     3. Call the function by appending .then() to getUserMedia(constraints) */
 
 
-
+    function showCam(stream){
+      video.srcObject = stream;
+    }
 
 
 
