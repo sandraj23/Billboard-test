@@ -55,16 +55,15 @@
     1. Create a function called showCam with one parameter: stream
     2. Set the srcObject of the video to stream 
     3. Call the function by appending .then() to getUserMedia(constraints) */
-
-    try{
-        function showCam(stream){
-        video.srcObject = stream;
-      }
+    function showCam(stream){
+    try{   
+        video.srcObject = stram;
     } catch (error) {
       console.error(error);
-      video.styl.left = '-9999px';
+      video.style.left = '-9999px';
       container.innerHTML = '<h2>Oops, your camera might not be working!</h2>';
     }
+  }
 
 
 
