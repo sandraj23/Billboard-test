@@ -102,7 +102,7 @@
      Take a look at the below code. All the filter effect buttons have been selected,
      and the id for each one colected.
      Your task is to write a single function to make all the filter styles work.
-     1. Write a function called addEfect, make sure to add a parameter if you need one.
+     1. Write a function called addEffect, make sure to add a parameter if you need one.
      2. Inside the function, use the style property to apply the appropriate CSS filter style to the video tag,
      depending on which button is clicked.
      */
@@ -114,6 +114,14 @@
         addEffect(id);
       });
     });
+
+    function addEffects(id) {
+      if (id == "mirror"){
+        id.style.transform = "rotateY(180deg)";
+        id.style.webkitTransform = "rotateY(180deg)"; // For Safari and Chrome
+        id.style.mozTransform = "rotateY(180deg)"; // For Firefox
+      }
+    }
 
 
    
