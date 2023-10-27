@@ -45,8 +45,22 @@
       audio: false,
       video: true
     }
+
+    async function getMedia(constraints) {
+      let stream = null;
+      try{   
+          stream = await navigator.mediaDevices.getUserMedia(constraints);
+          video.srcObject = stream;
+      } catch (error) {
+          console.error(error);
+          video.style.left = '-9999px';
+          container.innerHTML = '<h2>Oops, your camera might not be working!</h2>';
+      }
+    }
+
+    getMedia(constraints);
     
-    myDevices.getUserMedia(constraints).then(showCam);
+    //myDevices.getUserMedia(constraints).then(showCam);
 
 
 
@@ -55,7 +69,9 @@
     1. Create a function called showCam with one parameter: stream
     2. Set the srcObject of the video to stream 
     3. Call the function by appending .then() to getUserMedia(constraints) */
-    function showCam(stream){
+
+
+    /*function showCam(stream){
     try{   
         video.srcObject = stream;
     } catch (error) {
@@ -63,7 +79,7 @@
       video.style.left = '-9999px';
       container.innerHTML = '<h2>Oops, your camera might not be working!</h2>';
     }
-  }
+  }*/
 
 
 
